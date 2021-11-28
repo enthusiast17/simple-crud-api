@@ -18,7 +18,13 @@ After cloning process, you have to switch to `simple-crud-api` branch.
 
 ## How to run app?
 
-Well, there are even 3 ways to run app:
+First, you have to install dependencies by NPM
+
+```bash
+npm install
+```
+
+And then, there are even 3 ways to run app:
 
 1. Go to high level from folder and run by folder name
 
@@ -44,13 +50,7 @@ npm run start:prod // production version
 
 ## How to run tests?
 
-First, you have to install dependencies by NPM
-
-```bash
-npm install
-```
-
-And then, run
+Go to folder and run:
 
 ```
 npm run test
