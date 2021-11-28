@@ -9,6 +9,9 @@ module.exports = {
     ecmaVersion: 13,
   },
   rules: {
-    quotes: ["error", "double"],
+    quotes: "off",
+    "no-cond-assign": "off",
+    "func-names": "off",
+    "no-ex-assign": "off",
   },
 };

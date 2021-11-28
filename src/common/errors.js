@@ -3,6 +3,7 @@ class HttpError extends Error {
     super(message);
     this.statusCode = statusCode;
     this.name = name;
+    this.description = message;
   }
 }
 
