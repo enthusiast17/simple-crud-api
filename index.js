@@ -60,6 +60,10 @@ const app = http.createServer((req, res) => {
   });
 });
 
-app.listen(process.env.PORT || PORT);
+app.listen(process.env.PORT || PORT, () =>
+  process.stdin.write(
+    `Server running on http://localhost:${process.env.PORT || PORT}\n`
+  )
+);
 
 module.exports = app;
