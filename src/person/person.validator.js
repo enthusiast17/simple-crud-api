@@ -80,7 +80,7 @@ const models = [
 ];
 
 const validate = (person) => {
-  if (person.length > 3) {
+  if (Object.keys(person).length > 3) {
     throw new HttpError(
       BAD_REQUEST_CODE,
       BAD_REQUEST,
