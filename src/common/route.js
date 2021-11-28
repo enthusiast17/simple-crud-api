@@ -1,4 +1,5 @@
-const { GET_METHOD_IS_ALREADY_EXISTS, POST_METHOD_IS_ALREADY_EXISTS, HTTP_METHODS, PUT_METHOD_IS_ALREADY_EXISTS, DELETE_METHOD_IS_ALREADY_EXISTS } = require("./constants");
+const { GET_METHOD_IS_ALREADY_EXISTS, POST_METHOD_IS_ALREADY_EXISTS, HTTP_METHODS, PUT_METHOD_IS_ALREADY_EXISTS, DELETE_METHOD_IS_ALREADY_EXISTS, INTERNAL_ERROR, INTERNAL_ERROR_CODE } = require("./constants");
+const { HttpError } = require("./errors");
 
 class Route {
   constructor(name) {
@@ -12,14 +13,14 @@ class Route {
 
   get(fn) {
     if (this.methods.has(HTTP_METHODS.GET)) {
-      throw new Error(GET_METHOD_IS_ALREADY_EXISTS)
+      throw new HttpError(INTERNAL_ERROR_CODE, INTERNAL_ERROR, GET_METHOD_IS_ALREADY_EXISTS)
     }
     this.methods.set(HTTP_METHODS.GET, fn);
   }
 
   post(fn) {
     if (this.methods.has(HTTP_METHODS.POST)) {
-      throw new Error(POST_METHOD_IS_ALREADY_EXISTS);
+      throw new HttpError(INTERNAL_ERROR_CODE, INTERNAL_ERROR, POST_METHOD_IS_ALREADY_EXISTS);
     }
 
     this.methods.set(HTTP_METHODS.POST, fn);
@@ -27,7 +28,7 @@ class Route {
 
   put(fn) {
     if (this.methods.has(HTTP_METHODS.PUT)) {
-      throw new Error(PUT_METHOD_IS_ALREADY_EXISTS);
+      throw new HttpError(INTERNAL_ERROR_CODE, INTERNAL_ERROR, PUT_METHOD_IS_ALREADY_EXISTS);
     }
 
     this.methods.set(HTTP_METHODS.PUT, fn);
@@ -35,7 +36,7 @@ class Route {
 
   delete(fn) {
     if (this.methods.has(HTTP_METHODS.DELETE)) {
-      throw new Error(DELETE_METHOD_IS_ALREADY_EXISTS);
+      throw new HttpError(INTERNAL_ERROR_CODE, INTERNAL_ERROR, DELETE_METHOD_IS_ALREADY_EXISTS);
     }
 
     this.methods.set(HTTP_METHODS.DELETE, fn);
