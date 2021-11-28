@@ -79,7 +79,7 @@ const deleteById = (id) => {
 
   return {
     statusCode: 200,
-    name: "Success",
+    name: "Success.",
     description: "Successfully deleted...",
   };
 };

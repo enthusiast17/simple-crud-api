@@ -1,5 +1,6 @@
 const { Route } = require("../common/route");
 const personService = require("./person.service");
+const body = require("../common/body");
 
 const person = new Route("/person");
 
@@ -10,6 +11,7 @@ person.get((_, res) => {
 });
 
 person.post((req, res) => {
+  body.parse(req);
   res.writeHead(200, { "Content-Type": "application/json" });
   res.write(JSON.stringify(personService.create(req.body)));
   res.end();
@@ -24,6 +26,7 @@ personWithId.get((req, res) => {
 });
 
 personWithId.put((req, res) => {
+  body.parse(req);
   res.writeHead(200, { "Content-Type": "application/json" });
   res.write(
     JSON.stringify(personService.editById(req.params.personId, req.body))
