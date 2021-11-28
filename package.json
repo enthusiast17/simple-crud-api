@@ -1,0 +1,26 @@
+{
+  "name": "simple-crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enthusiast17/simple-crud-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enthusiast17/simple-crud-api/issues"
+  },
+  "homepage": "https://github.com/enthusiast17/simple-crud-api#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
