@@ -2,10 +2,6 @@ const {
   HTTP_METHODS,
   INTERNAL_ERROR,
   INTERNAL_ERROR_CODE,
-  ROUTE_GET_METHOD_IS_ALREADY_EXISTS,
-  ROUTE_POST_METHOD_IS_ALREADY_EXISTS,
-  ROUTE_PUT_METHOD_IS_ALREADY_EXISTS,
-  ROUTE_DELETE_METHOD_IS_ALREADY_EXISTS
 } = require("./constants");
 const { HttpError } = require("./errors");
 
@@ -24,7 +20,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        ROUTE_GET_METHOD_IS_ALREADY_EXISTS, 
+        "Route get: GET method is already exists.",
       );
     }
     this.methods.set(HTTP_METHODS.GET, fn);
@@ -35,7 +31,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        ROUTE_POST_METHOD_IS_ALREADY_EXISTS,  
+        "Route post: POST method is already exists.",
       );
     }
 
@@ -47,7 +43,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        ROUTE_PUT_METHOD_IS_ALREADY_EXISTS,
+        "Route put: PUT method is already exists.",
       );
     }
 
@@ -59,7 +55,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        ROUTE_DELETE_METHOD_IS_ALREADY_EXISTS,
+        "Route delete: DELETE method is already exists.",
       );
     }
 

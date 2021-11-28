@@ -1,11 +1,4 @@
-const { it, expect } = require("@jest/globals");
-const {
-  HTTP_METHODS,
-  ROUTE_GET_METHOD_IS_ALREADY_EXISTS,
-  ROUTE_POST_METHOD_IS_ALREADY_EXISTS,
-  ROUTE_PUT_METHOD_IS_ALREADY_EXISTS,
-  ROUTE_DELETE_METHOD_IS_ALREADY_EXISTS
-} = require("../src/common/constants");
+const { HTTP_METHODS } = require("../src/common/constants");
 const { Route } = require("../src/common/route");
 
 describe("Test route", () => {
@@ -16,46 +9,46 @@ describe("Test route", () => {
   });
 
   it("should contain GET method", () => {
-    route.get((req, res) => {});
+    route.get(() => {});
     expect(route.methods.get(HTTP_METHODS.GET)).not.toBeUndefined();
   });
 
   it("should contain POST method", () => {
-    route.post((req, res) => {});
+    route.post(() => {});
     expect(route.methods.get(HTTP_METHODS.POST)).not.toBeUndefined();
   });
 
   it("should contain PUT method", () => {
-    route.put((req, res) => {});
+    route.put(() => {});
     expect(route.methods.get(HTTP_METHODS.PUT)).not.toBeUndefined();
   });
 
   it("should contain DELETE method", () => {
-    route.delete((req, res) => {});
+    route.delete(() => {});
     expect(route.methods.get(HTTP_METHODS.DELETE)).not.toBeUndefined();
   });
 
   it("should throw GET error", () => {
-    expect(() => route.get((req, res) => {})).toThrow(
-      ROUTE_GET_METHOD_IS_ALREADY_EXISTS,
+    expect(() => route.get(() => {})).toThrow(
+      "Route get: GET method is already exists.",
     );
   });
 
   it("should throw POST error", () => {
-    expect(() => route.post((req, res) => {})).toThrow(
-      ROUTE_POST_METHOD_IS_ALREADY_EXISTS,
+    expect(() => route.post(() => {})).toThrow(
+      "Route post: POST method is already exists.",
     );
   });
 
   it("should throw PUT error", () => {
-    expect(() => route.put((req, res) => {})).toThrow(
-      ROUTE_PUT_METHOD_IS_ALREADY_EXISTS,
+    expect(() => route.put(() => {})).toThrow(
+      "Route put: PUT method is already exists.",
     );
   });
 
   it("should throw DELETE error", () => {
-    expect(() => route.delete((req, res) => {})).toThrow(
-      ROUTE_DELETE_METHOD_IS_ALREADY_EXISTS,
+    expect(() => route.delete(() => {})).toThrow(
+      "Route delete: DELETE method is already exists.",
     );
   });
 
