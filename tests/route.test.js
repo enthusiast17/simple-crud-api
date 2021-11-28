@@ -1,5 +1,11 @@
 const { it, expect } = require("@jest/globals");
-const { HTTP_METHODS, GET_METHOD_IS_ALREADY_EXISTS, POST_METHOD_IS_ALREADY_EXISTS, PUT_METHOD_IS_ALREADY_EXISTS, DELETE_METHOD_IS_ALREADY_EXISTS } = require("../src/common/constants");
+const {
+  HTTP_METHODS,
+  ROUTE_GET_METHOD_IS_ALREADY_EXISTS,
+  ROUTE_POST_METHOD_IS_ALREADY_EXISTS,
+  ROUTE_PUT_METHOD_IS_ALREADY_EXISTS,
+  ROUTE_DELETE_METHOD_IS_ALREADY_EXISTS
+} = require("../src/common/constants");
 const { Route } = require("../src/common/route");
 
 describe("Test route", () => {
@@ -30,19 +36,27 @@ describe("Test route", () => {
   });
 
   it("should throw GET error", () => {
-    expect(() => route.get((req, res) => {})).toThrow(GET_METHOD_IS_ALREADY_EXISTS);
+    expect(() => route.get((req, res) => {})).toThrow(
+      ROUTE_GET_METHOD_IS_ALREADY_EXISTS,
+    );
   });
 
   it("should throw POST error", () => {
-    expect(() => route.post((req, res) => {})).toThrow(POST_METHOD_IS_ALREADY_EXISTS);
+    expect(() => route.post((req, res) => {})).toThrow(
+      ROUTE_POST_METHOD_IS_ALREADY_EXISTS,
+    );
   });
 
   it("should throw PUT error", () => {
-    expect(() => route.put((req, res) => {})).toThrow(PUT_METHOD_IS_ALREADY_EXISTS);
+    expect(() => route.put((req, res) => {})).toThrow(
+      ROUTE_PUT_METHOD_IS_ALREADY_EXISTS,
+    );
   });
 
   it("should throw DELETE error", () => {
-    expect(() => route.delete((req, res) => {})).toThrow(DELETE_METHOD_IS_ALREADY_EXISTS);
+    expect(() => route.delete((req, res) => {})).toThrow(
+      ROUTE_DELETE_METHOD_IS_ALREADY_EXISTS,
+    );
   });
 
   it("should find by GET method", () => {
