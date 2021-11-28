@@ -12,6 +12,8 @@ const NOT_FOUND_CODE = 404;
 const BAD_REQUEST = "Bad Request.";
 const BAD_REQUEST_CODE = "400";
 
+const PORT = 5000;
+
 module.exports = {
   HTTP_METHODS,
   INTERNAL_ERROR,
@@ -20,4 +22,5 @@ module.exports = {
   NOT_FOUND_CODE,
   BAD_REQUEST,
   BAD_REQUEST_CODE,
+  PORT,
 };

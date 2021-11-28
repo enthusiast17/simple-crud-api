@@ -1,3 +1,4 @@
+const dotenv = require("dotenv");
 const http = require("http");
 const {
   NOT_FOUND,
@@ -6,11 +7,14 @@ const {
   INTERNAL_ERROR,
   BAD_REQUEST,
   BAD_REQUEST_CODE,
+  PORT,
 } = require("./src/common/constants");
 const { HttpError } = require("./src/common/errors");
 const { isRouteEqualToUrl } = require("./src/common/url-util");
 const personRoutes = require("./src/person/person.routes");
 const params = require("./src/common/params");
+
+dotenv.config();
 
 http
   .createServer((req, res) => {
@@ -67,4 +71,4 @@ http
       }
     });
   })
-  .listen(5000);
+  .listen(process.env.PORT || PORT);
