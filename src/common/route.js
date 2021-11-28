@@ -20,7 +20,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        "Route get: GET method is already exists.",
+        "Route get: GET method is already exists."
       );
     }
     this.methods.set(HTTP_METHODS.GET, fn);
@@ -31,7 +31,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        "Route post: POST method is already exists.",
+        "Route post: POST method is already exists."
       );
     }
 
@@ -43,7 +43,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        "Route put: PUT method is already exists.",
+        "Route put: PUT method is already exists."
       );
     }
 
@@ -55,7 +55,7 @@ class Route {
       throw new HttpError(
         INTERNAL_ERROR_CODE,
         INTERNAL_ERROR,
-        "Route delete: DELETE method is already exists.",
+        "Route delete: DELETE method is already exists."
       );
     }
 

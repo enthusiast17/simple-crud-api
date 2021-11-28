@@ -30,25 +30,25 @@ describe("Test route", () => {
 
   it("should throw GET error", () => {
     expect(() => route.get(() => {})).toThrow(
-      "Route get: GET method is already exists.",
+      "Route get: GET method is already exists."
     );
   });
 
   it("should throw POST error", () => {
     expect(() => route.post(() => {})).toThrow(
-      "Route post: POST method is already exists.",
+      "Route post: POST method is already exists."
     );
   });
 
   it("should throw PUT error", () => {
     expect(() => route.put(() => {})).toThrow(
-      "Route put: PUT method is already exists.",
+      "Route put: PUT method is already exists."
     );
   });
 
   it("should throw DELETE error", () => {
     expect(() => route.delete(() => {})).toThrow(
-      "Route delete: DELETE method is already exists.",
+      "Route delete: DELETE method is already exists."
     );
   });
 
